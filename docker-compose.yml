@@ -18,7 +18,8 @@ services:
             - php
             - mysqldb
     php:
-        image: nanoninja/php-fpm:${PHP_VERSION}
+        build:
+              "./etc/php"
         restart: always
         volumes:
             - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
